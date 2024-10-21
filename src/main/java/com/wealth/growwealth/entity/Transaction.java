@@ -1,6 +1,7 @@
 package com.wealth.growwealth.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Pattern;
 
 import java.time.LocalDate;
 
@@ -16,6 +17,7 @@ public class Transaction {
     private Portfolio portfolio;
 
     // "BUY" or "SELL"
+    @Pattern(regexp = "BUY|SELL", message = "Type must be either BUY or SELL")
     private String type;
     private Double amount;
     private LocalDate transactionDate;

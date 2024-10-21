@@ -1,6 +1,9 @@
 package com.wealth.growwealth.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+import org.springframework.lang.NonNull;
 
 import java.util.List;
 
@@ -11,8 +14,10 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     private String name;
 
+    @Email
     private String email;
 
     // client can have many portfolios

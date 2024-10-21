@@ -1,6 +1,7 @@
 package com.wealth.growwealth.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Stock {
@@ -10,6 +11,7 @@ public class Stock {
     private Long id;
 
     private String ticker;
+    @NotNull(message = "At-least 1 qt")
     private Double quantity;
     private Double currentPrice;
 
