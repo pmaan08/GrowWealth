@@ -1,7 +1,7 @@
 package com.wealth.growwealth.controller;
 
 import com.wealth.growwealth.entity.Transaction;
-import com.wealth.growwealth.service.TranactionService;
+import com.wealth.growwealth.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,7 @@ import java.util.List;
 public class TransactionController {
 
     @Autowired
-    private TranactionService tranactionService;
+    private TransactionService tranactionService;
 
     @PostMapping
     public ResponseEntity<Transaction> addTransaction(@RequestBody Transaction transaction) {

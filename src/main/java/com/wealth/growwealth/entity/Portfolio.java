@@ -1,5 +1,7 @@
 package com.wealth.growwealth.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -16,6 +18,7 @@ public class Portfolio {
     // Multiple portfolio -> 1 client
     @ManyToOne
     @JoinColumn(name = "client_id")
+    @JsonIgnore
     private Client client;
 
     // 1 Portfolio -> many tranactions

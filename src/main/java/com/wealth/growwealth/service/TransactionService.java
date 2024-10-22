@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class TranactionService {
+public class TransactionService {
 
     @Autowired
     private TransactionRepository transactionRepository;
