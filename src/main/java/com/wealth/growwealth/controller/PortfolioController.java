@@ -1,26 +1,28 @@
 package com.wealth.growwealth.controller;
 
 import com.wealth.growwealth.entity.Portfolio;
+import com.wealth.growwealth.service.PortfolioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.sound.sampled.Port;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/portfolios")
-public class PortfolioService {
+public class PortfolioController {
 
     @Autowired
     private PortfolioService portfolioService;
 
+
+
     @PostMapping
     public Portfolio createPortfolio(@RequestBody Portfolio portfolio) {
-            return portfolioService.createPortfolio(portfolio);
+            return portfolioService.savePortfolio(portfolio);
     }
 
     @GetMapping
-    public List<Portfolio> getAllPortfolios() {
+    public List<Portfolio> getPortfolios() {
         return portfolioService.getAllPortfolios();
     }
 }

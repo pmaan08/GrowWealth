@@ -13,7 +13,7 @@ public class PortfolioService {
     @Autowired
     private PortfolioRepository portfolioRepository;
 
-    public List<Portfolio> getPortfolios() {
+    public List<Portfolio> getAllPortfolios() {
             return portfolioRepository.findAll();
     }
 
