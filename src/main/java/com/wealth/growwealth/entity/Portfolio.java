@@ -28,11 +28,14 @@ public class Portfolio {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Stock> stocks;
 
-    //@OneToMany(cascade = CascadeType.ALL) List<Bond> bonds
-    //@OneToMany(cascade = CascadeType.ALL) List<RealEstate> realEstates
-    //@OneToMany(cascade = CascadeType.ALL) List<AlternativeInvestment> alternativeInvestments
-    //@OneToMany(cascade = CascadeType.ALL) List<BusinessHolding> businessHoldings
-    //@OneToMany(cascade = CascadeType.ALL) List<CashEquivalent> cashEquivalents
+    @OneToMany(cascade = CascadeType.ALL)
+    List<BusinessHolding> businessHoldings;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    List<CashEquivalent> cashEquivalents;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    List<RealEstate> realEstates;
 
 
     //getter

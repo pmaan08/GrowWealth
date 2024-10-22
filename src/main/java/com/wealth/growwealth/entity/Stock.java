@@ -1,6 +1,7 @@
 package com.wealth.growwealth.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
@@ -14,6 +15,8 @@ public class Stock {
     @NotNull(message = "At-least 1 qt")
     private Double quantity;
     private Double currentPrice;
+
+    private Double ytm; // yield to maturity for bonds
 
     public Long getId() {
         return id;
@@ -45,5 +48,14 @@ public class Stock {
 
     public void setCurrentPrice(Double currentPrice) {
         this.currentPrice = currentPrice;
+    }
+
+    @Min(value = 0, message = "YTM is positive")
+    public  Double getYtm() {
+        return ytm;
+    }
+
+    public void setYtm(Double ytm) {
+        this.ytm = ytm;
     }
 }
