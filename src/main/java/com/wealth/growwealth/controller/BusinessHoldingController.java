@@ -60,5 +60,15 @@ public class BusinessHoldingController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
     }
 
+    // Get the total amount of a specific Business Holding by ID
+    @GetMapping("/{id}/totalAmount")
+    public ResponseEntity<Double> getTotalAmount(@PathVariable Long id) {
+        BusinessHolding businessHolding = businessHoldingService.getBusinessHoldingById(id);
+        if (businessHolding != null) {
+            return ResponseEntity.ok(businessHolding.getTotalAmount());
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+    }
+
 }
 
