@@ -10,14 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/login")
+@RequestMapping("/api")
 public class UserLoginController {
 
     @Autowired
     private UserService userService;
 
-    @PostMapping
-    public ResponseEntity<User> login(@RequestBody User loginRequestUser) {
+    // login endPoint
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody User loginRequestUser) {
 
         User user = userService.findByUsername(loginRequestUser.getUsername());
 
@@ -31,4 +32,20 @@ public class UserLoginController {
 
         return ResponseEntity.ok(user);
     }
+
+    // signUp endPoint
+    @PostMapping("/signup")
+    public ResponseEntity<?> signup(@RequestBody User signupRequest) {
+
+        if (userService.findByUsername(signupRequest.getUsername()) != null) {
+            return ResponseEntity.badRequest().body("Username already exists");
+        }
+
+        // Save the user
+        userService.saveUser(signupRequest);
+
+        return ResponseEntity.ok("User created successfully");
+    }
+
+
 }
