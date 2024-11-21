@@ -11,8 +11,11 @@ The GrowWealth Backend is a Spring Boot application designed to manage user data
 - Secure password storage with BCryptPasswordEncoder
 
 # Future Development
-- JWT Authentication: Planned for future releases to enhance security and enable stateless authentication.
-- Integration of additional financial sections like Business Holdings, Real Estate, etc
+- Expanded Data Integration: The backend will be integrated with additional APIs for managing various asset types such as Business Holdings, Real Estate, etc.
+- User Profile Management: The app will support user profile editing and other personalized features.
+- JWT Authentication: Future updates may include the addition of JWT for stateless authentication and better user session management.
+- Deployment: This backend will be deployed on a cloud platform (e.g., Heroku or AWS), and continuous integration will be set up for automated testing and deployment.
+
 
 # Related Projects
 Front-end Repository: https://github.com/pmaan08/GrowWealthUI
@@ -46,6 +49,17 @@ Front-end Repository: https://github.com/pmaan08/GrowWealthUI
 
 - Data Fetching:
 ### `GET /api/clients`
+
+
+# Deployment
+- This application is ready to be deployed on a cloud server or local server.
+- Instructions for deployment will be added once ready to go live.
+- For local development, ensure that you have MySQL installed and configured correctly. You can then deploy this Spring Boot application using Gradle.
+
+# Security
+- The application uses Spring Security for user authentication. Passwords are securely stored using BCryptPasswordEncoder to ensure that user credentials are never stored in plaintext.
+- CSRF protection is disabled to allow the front-end React app to interact without additional headers.
+- CORS configuration is enabled for local development (allowing requests from http://localhost:3000).
 
 # Contribution Guidelines
 Fork the repository and create a pull request for contributions.
