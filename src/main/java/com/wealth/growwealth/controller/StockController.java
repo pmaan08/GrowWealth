@@ -16,17 +16,17 @@ public class StockController {
     @Autowired
     private StockService stockService;
 
-    @GetMapping
+    @GetMapping("/{id}")
     public Stock getStockById(@RequestParam int id) {
         return stockService.getStockById((long) id);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Stock> getAllPortfolioStocks() {
         return stockService.getAllStocks();
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<Stock> addStock(@RequestBody Stock stock) {
         Stock savedStock = stockService.saveStock(stock);
         return ResponseEntity.ok(savedStock);

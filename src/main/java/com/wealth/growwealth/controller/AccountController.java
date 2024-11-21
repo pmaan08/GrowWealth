@@ -24,14 +24,14 @@ public class AccountController {
     }
 
     // Get all Accounts
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Account>> getAllAccounts() {
         List<Account> accounts = accountService.getAllAccounts();
         return ResponseEntity.ok(accounts);
     }
 
     // Get an Account by ID
-    @GetMapping
+    @GetMapping("/{id}")
     public ResponseEntity<Account> getAccountById(@PathVariable Long id) {
         Account account = accountService.getAccountById(id);
         if (account != null) {
